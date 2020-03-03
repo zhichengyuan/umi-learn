@@ -14,66 +14,30 @@ const Router = DefaultRouter;
 const routes = [
   {
     path: '/',
-    component: require('../../layout/index.js').default,
+    component: require('../../layouts/index.js').default,
     routes: [
-      {
-        path: '/404',
-        exact: true,
-        component: require('../404.js').default,
-      },
       {
         path: '/',
         exact: true,
         component: require('../index.js').default,
+        title: '首页',
+        Routes: [require('../../routes/HandleTitle.js').default],
       },
       {
-        path: '/page1',
+        path: '/login',
         exact: true,
-        component: require('../page1.js').default,
+        component: require('../login.js').default,
+        title: '登录页',
+        Routes: [require('../../routes/HandleTitle.js').default],
       },
       {
-        path: '/page2',
+        path: '/welcome',
         exact: true,
-        component: require('../page2.js').default,
-      },
-      {
-        path: '/sub',
-        exact: false,
-        component: require('../sub/_layout.js').default,
-        routes: [
-          {
-            path: '/sub/a',
-            exact: true,
-            component: require('../sub/a.js').default,
-          },
-          {
-            path: '/sub/b',
-            exact: true,
-            component: require('../sub/b.js').default,
-          },
-          {
-            path: '/sub',
-            exact: true,
-            component: require('../sub/index.js').default,
-          },
-          {
-            path: '/sub/sub/a',
-            exact: true,
-            component: require('../sub/sub/a.js').default,
-          },
-          {
-            path: '/sub/:name/:id?',
-            exact: true,
-            component: require('../sub/$name/$id$.js').default,
-          },
-          {
-            component: () =>
-              React.createElement(
-                require('C:/Users/17987/AppData/Local/Yarn/Data/global/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
-                  .default,
-                { pagesPath: 'src/pages', hasRoutesInConfig: false },
-              ),
-          },
+        component: require('../welcome.js').default,
+        title: '欢迎页',
+        Routes: [
+          require('../../routes/PrivateRouter.js').default,
+          require('../../routes/HandleTitle.js').default,
         ],
       },
       {
