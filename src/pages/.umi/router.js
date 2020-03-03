@@ -28,6 +28,26 @@ const routes = [
     component: require('../page2.js').default,
   },
   {
+    path: '/sub/a',
+    exact: true,
+    component: require('../sub/a.js').default,
+  },
+  {
+    path: '/sub/b',
+    exact: true,
+    component: require('../sub/b.js').default,
+  },
+  {
+    path: '/sub',
+    exact: true,
+    component: require('../sub/index.js').default,
+  },
+  {
+    path: '/sub',
+    exact: true,
+    component: require('../sub.js').default,
+  },
+  {
     component: () =>
       React.createElement(
         require('C:/Users/17987/AppData/Local/Yarn/Data/global/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
