@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function index() {
+export default function() {
     return (
         <div>
-            首页1
+            <h1>404页面不存在</h1>
         </div>
     )
 }
