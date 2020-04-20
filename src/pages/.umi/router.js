@@ -8,8 +8,9 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
+import { routerRedux } from 'dva';
 
-const Router = DefaultRouter;
+const Router = routerRedux.ConnectedRouter;
 
 const routes = [
   {
@@ -17,18 +18,43 @@ const routes = [
     component: require('../../layouts/index.js').default,
     routes: [
       {
+        path: '/counter',
+        exact: true,
+        component: require('../counter.js').default,
+        _title: true,
+        _title_default: true,
+      },
+      {
         path: '/',
         exact: true,
         component: require('../index.js').default,
         title: '首页',
-        Routes: [require('../../routes/HandleTitle.js').default],
+        Routes: [require('./TitleWrapper.jsx').default],
+        _title: '首页',
+        _title_default: true,
       },
       {
         path: '/login',
         exact: true,
         component: require('../login.js').default,
         title: '登录页',
-        Routes: [require('../../routes/HandleTitle.js').default],
+        Routes: [require('./TitleWrapper.jsx').default],
+        _title: '登录页',
+        _title_default: true,
+      },
+      {
+        path: '/sub/a',
+        exact: true,
+        component: require('../sub/a.js').default,
+        _title: true,
+        _title_default: true,
+      },
+      {
+        path: '/sub/sub/b',
+        exact: true,
+        component: require('../sub/sub/b.js').default,
+        _title: true,
+        _title_default: true,
       },
       {
         path: '/welcome',
@@ -37,8 +63,10 @@ const routes = [
         title: '欢迎页',
         Routes: [
           require('../../routes/PrivateRouter.js').default,
-          require('../../routes/HandleTitle.js').default,
+          require('./TitleWrapper.jsx').default,
         ],
+        _title: '欢迎页',
+        _title_default: true,
       },
       {
         component: () =>
@@ -47,8 +75,12 @@ const routes = [
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
+        _title: true,
+        _title_default: true,
       },
     ],
+    _title: true,
+    _title_default: true,
   },
   {
     component: () =>
@@ -57,6 +89,8 @@ const routes = [
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),
+    _title: true,
+    _title_default: true,
   },
 ];
 window.g_routes = routes;
