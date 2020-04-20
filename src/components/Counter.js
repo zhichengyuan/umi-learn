@@ -1,13 +1,18 @@
 import React from 'react'
 import {connect} from 'dva'
+import styles from "./Counter.less"
+import buttonStyles from '@/assets/css/button.css'
 
 function Counter({number,onIncrease,onDecrease}) {
     return (
-        <div>
-            <h1>{number}</h1>
+        <div className={styles.counter}>
+            <div className={styles.container}>
+                <span className={styles.box}>你好</span>
+            </div>
+            <h1 className={styles.title}>{number}</h1>
             <p>
-                <button onClick={onDecrease}>减</button>
-                <button onClick={onIncrease}>加</button>
+                <button className={buttonStyles.button} onClick={onDecrease}>减</button>
+                <button className={buttonStyles.button} onClick={onIncrease}>加</button>
             </p>
         </div>
     )
