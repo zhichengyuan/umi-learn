@@ -4,7 +4,8 @@ import withcRouter from 'umi/withRouter'
 function A(props) {
     return (
         <div>
-           {props.location.pathname} 
+
+           A组件：{props.location.pathname} 
         </div>
     )
 }
