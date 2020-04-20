@@ -1,5 +1,5 @@
 /**
- * title: 首页
+ * title: 首页2
  * Routes:
  *      - ./src/routes/HandleTitle.js
  */

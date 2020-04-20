@@ -20,7 +20,7 @@ const routes = [
         path: '/',
         exact: true,
         component: require('../index.js').default,
-        title: '首页',
+        title: '首页2',
         Routes: [require('../../routes/HandleTitle.js').default],
       },
       {

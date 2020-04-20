@@ -3,6 +3,7 @@ import Link from 'umi/link'
 
 export default function PrivateRouter(props) {
     var loginId = localStorage.getItem('loginId');
+    console.log(props.children)
     if(loginId) {
         return props.children;
     }else{
