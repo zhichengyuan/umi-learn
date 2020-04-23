@@ -1,0 +1,15 @@
+.nav{
+    height: 100%;
+    background: #333;
+    color: #fff;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+.nav li{
+    height: 35px;
+    line-height: 35px;
+    padding: 0 20px;
+}
+.nav li:hover,.nav li a.active{
+    color: rgb(224, 236, 117);
+}

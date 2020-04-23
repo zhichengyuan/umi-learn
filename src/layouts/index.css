@@ -1,3 +1,4 @@
-a{
-    margin: 0 30px;
+.main{
+    box-sizing: border-box;
+    padding: 20px;
 }

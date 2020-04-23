@@ -21,8 +21,9 @@ export function _onCreate() {
   });
   
   app.model({ namespace: 'counter', ...(require('C:/个人中心/学习/umi-learn/src/models/counter.js').default) });
+app.model({ namespace: 'loginUser', ...(require('C:/个人中心/学习/umi-learn/src/models/loginUser.js').default) });
+app.model({ namespace: 'students copy', ...(require('C:/个人中心/学习/umi-learn/src/models/students copy.js').default) });
 app.model({ namespace: 'students', ...(require('C:/个人中心/学习/umi-learn/src/models/students.js').default) });
-app.model({ namespace: 'temp', ...(require('C:/个人中心/学习/umi-learn/src/pages/sub/models/temp.js').default) });
   return app;
 }
 

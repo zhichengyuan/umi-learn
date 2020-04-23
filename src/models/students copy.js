@@ -1,6 +1,4 @@
 import { searchStudents } from '../services/student'
-import { routerRedux } from 'dva/router'
-
 export default{
     state:{
         condition:{
@@ -15,32 +13,12 @@ export default{
         }
     },
     subscriptions:{
-        // initStudents({dispatch}){
-        //     dispatch({type:'fetchStudents'})
-        // },
-        listenUrl({history,dispatch}) {
-            history.listen((newLocation) => {
-                if(newLocation.pathname !== "/student"){
-                    return;
-                }
-                const query = newLocation.query;
-                query.limit && (query.limit = +query.limit)
-                query.page && (query.page = +query.page)
-                query.sex && (query.sex = +query.sex)
-                dispatch({
-                    type:'changeCondition',
-                    payload:newLocation.query
-                })
-                console.log(newLocation);
-                dispatch({
-                    type:'fetchStudents'
-                })
-            })
-            
+        initStudents({dispatch}){
+            dispatch({type:'fetchStudents'})
         }
     },
     reducers:{
-        changeCondition(state,{ payload }){
+        setCondition(state,{ payload }){
             return{
                 ...state,
                 condition:{
@@ -57,15 +35,6 @@ export default{
         }
     },
     effects:{
-        *setCondition(action,{put,select}){
-            yield put({
-                type:"changeCondition",
-                payload:action.payload
-            });
-            //改变地址
-            const condition = yield select(state => state.students.condition);
-            yield put(routerRedux.push(`?page=${condition.page}&limit=${condition.limit}&key=${condition.key}&sex=${condition.sex}`))
-        },
         /**
          * 根据当前的条件，搜索学生
          * @param {*} action 

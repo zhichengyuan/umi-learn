@@ -3,13 +3,11 @@
  *      - src/router/PrivateRouter
  */
 import React from 'react'
-import {getAllStudents} from '../services/student.js'
 
-export default function index() {
-    
+export default function add() {
     return (
         <div>
-            你哈
+            学生添加页
         </div>
     )
 }
