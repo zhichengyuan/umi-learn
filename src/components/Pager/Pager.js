@@ -16,7 +16,6 @@ export default function Pager(props) {
     if(pageNumber == '0') {
         return null;
     }
-    console.log(props);
     const min = getMinNumber(props);//获取最小数字
     const max = getMaxNumber(min,pageNumber,props);//最大数字
     const number = [];

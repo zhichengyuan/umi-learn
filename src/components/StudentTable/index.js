@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "./index.css"
 import { Link } from 'umi'
 export default function StudentTable(props) {
-    console.log(props)
     const trs = props.stus.map(s => <tr key={s.id}>
         <td>{s.sNo}</td>
         <td>{s.name}</td>
