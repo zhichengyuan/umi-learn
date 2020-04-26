@@ -1,6 +1,6 @@
 import './polyfills';
 import history from './history';
-
+import '../../global.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import findRoute, {

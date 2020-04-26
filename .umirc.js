@@ -3,6 +3,7 @@ export default {
         ["umi-plugin-react",{
             title:true,//开启title插件
             dva:true,//开启dva插件
+            antd:true,
             routes:{
                 exclude:[/.*\/models\/.*/,/.*\/model\.js/]
             }
@@ -14,5 +15,8 @@ export default {
             changeOrigin:true//修改源
         }
 
-    }
+    },
+    theme: {
+        "primary-color": "#1DA57A",
+      },
 }
